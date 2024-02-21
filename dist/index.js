@@ -17,7 +17,7 @@ app.use(express_1.default.text());
 app.use((0, cookie_parser_1.default)());
 app.get("/login", (req, res) => {
     res.cookie("authed-user", "abdus samad", {
-        signed: true,
+        // signed: true,
         httpOnly: true,
         secure: true,
         maxAge: Date.now() + 5 * 1000,

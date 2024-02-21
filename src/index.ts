@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 app.get("/login", (req, res) => {
   res.cookie("authed-user", "abdus samad", {
-    signed: true,
+    // signed: true,
     httpOnly: true,
     secure: true,
     maxAge: Date.now() + 5 * 1000,
