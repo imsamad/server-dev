@@ -36,6 +36,12 @@ app.get("/secure", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    cookies: req.cookies,
+  });
+});
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT);
