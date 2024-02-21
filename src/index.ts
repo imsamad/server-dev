@@ -32,6 +32,7 @@ app.get("/login", (req, res) => {
 
 app.get("/secure", (req, res) => {
   res.json({
+    set: "true",
     cookies: req.cookies,
   });
 });
