@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 const app = express();
 
@@ -16,8 +17,10 @@ app.use(express.text());
 
 app.use(cookieParser());
 
+app.use(express.static(path.join(__dirname, "../", "public")));
+
 app.post("/login", (req, res) => {
-  res.cookie("authed-user", "abdus samad", {
+  res.cookie("authed-user" + Date.now(), "abdus samad", {
     // signed: true,
     httpOnly: true,
     secure: true,
@@ -26,7 +29,7 @@ app.post("/login", (req, res) => {
   });
 
   res.json({
-    cookie: "set",
+    cookies: req.cookies,
   });
 });
 
