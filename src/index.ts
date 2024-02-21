@@ -16,7 +16,7 @@ app.use(express.text());
 
 app.use(cookieParser());
 
-app.get("/login", (req, res) => {
+app.post("/login", (req, res) => {
   res.cookie("authed-user", "abdus samad", {
     // signed: true,
     httpOnly: true,

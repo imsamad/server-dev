@@ -15,7 +15,7 @@ app.use((0, cors_1.default)({
 app.use(express_1.default.json());
 app.use(express_1.default.text());
 app.use((0, cookie_parser_1.default)());
-app.get("/login", (req, res) => {
+app.post("/login", (req, res) => {
     res.cookie("authed-user", "abdus samad", {
         // signed: true,
         httpOnly: true,
